@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/initialLoadingFragment">
+
+    <fragment
+        android:id="@+id/initialLoadingFragment"
+        android:name="com.mf.mf_new.ui.InitialLoadingFragment"
+        android:label="initial_loading_data"
+        tools:layout="@layout/initial_loading_data" >
+        <action
+            android:id="@+id/action_initialLoadingFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+        <action
+            android:id="@+id/action_initialLoadingFragment_to_loadingError"
+            app:destination="@id/loadingError" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeScreenFragment"
+        android:name="com.mf.mf_new.ui.HomeScreenFragment"
+        android:label="home_screen_content"
+        tools:layout="@layout/home_screen_content" >
+        <action
+            android:id="@+id/action_homeScreenFragment_to_allMfFundsFragment"
+            app:destination="@id/allMfFundsFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_allMfFundsCompanyFragment"
+            app:destination="@id/allMfFundsCompanyFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_allMfCategotyFragment"
+            app:destination="@id/allMfCategotyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loadingError"
+        android:name="com.mf.mf_new.ui.LoadingError"
+        android:label="fragment_loading_error"
+        tools:layout="@layout/fragment_loading_error" >
+        <action
+            android:id="@+id/action_loadingError_to_initialLoadingFragment"
+            app:destination="@id/initialLoadingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allMfFundsFragment"
+        android:name="com.mf.mf_new.ui.allfunds.AllMfFundsFragment"
+        android:label="all_mf_funds_fragment"
+        tools:layout="@layout/all_mf_funds_fragment" >
+        <action
+            android:id="@+id/action_allMfFundsFragment_to_mfDetailFragment"
+            app:destination="@id/mfDetailFragment" >
+            <argument
+                android:name="mf_detail"
+                app:argType="com.mf.mf_new.repo.MfDetailItem"
+                android:defaultValue="@null" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/allMfFundsCompanyFragment"
+        android:name="com.mf.mf_new.ui.allcompany.AllMfFundsCompanyFragment"
+        android:label="all_mf_funds_fragment"
+        tools:layout="@layout/all_mf_funds_fragment" >
+        <action
+            android:id="@+id/action_allMfFundsCompanyFragment_to_allMfFundsFragment"
+            app:destination="@id/allMfFundsFragment" >
+            <argument
+                android:name="company_name"
+                app:argType="string"
+                android:defaultValue="@null" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/allMfCategotyFragment"
+        android:name="com.mf.mf_new.ui.allmfcategory.AllMfCategoryFragment"
+        android:label="all_category_activity"
+        tools:layout="@layout/all_category_activity" />
+    <fragment
+        android:id="@+id/mfDetailFragment"
+        android:name="com.mf.mf_new.ui.MfDetailFragment"
+        android:label="fragment_mf_detail"
+        tools:layout="@layout/fragment_mf_detail" />
+</navigation>

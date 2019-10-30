@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+            app:popupTheme="@style/AppTheme.PopupOverlay"-->
+    <!--<com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:background="?attr/colorPrimary"
+            android:layout_height="?attr/actionBarSize" />
+    </com.google.android.material.appbar.AppBarLayout>-->
+    <fragment
+        android:id="@+id/all_mf_fragment"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        tools:layout="@layout/all_mf_funds_fragment"
+        android:layout_height="match_parent"
+        class="com.mf.mf_new.ui.allfunds.AllMfFundsFragment" />
+</LinearLayout>
